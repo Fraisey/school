@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section
+{
+    height: 100vh;
+    background-color: rgb(58, 139, 99);
+    font-family: sans-serif;
+}
+
+.score
+{
+    color: white;
+    height: 20vh;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score p
+{
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.title
+{
+    color: white;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: opacity 1s ease;
+}
+
+.title h1
+{
+    font-size: 55px;
+}
+
+.title button
+{
+    width: 400px;
+    height: 150px;
+    color: white;
+    font-size: 30px;
+    background: rgb(230, 90, 90);
+}
+
+.hands
+{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.winner
+{
+    color: rgb(230, 90, 90);
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.actions
+{
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.computer-hand
+{
+    transform: rotateX(180deg);
+}
+
+div.fadeOut
+{
+    opacity: 0;
+}
+
+div.fadeIn
+{
+    opacity: 1;
+}
