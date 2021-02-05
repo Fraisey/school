@@ -35,57 +35,78 @@ const game = () =>
                     //When you choose your option, it randomly selects the ai action
                     const computerNumber = Math.floor(Math.random() * 3);
                     const computerAction = computerOptions[computerNumber];
-                    console.log(computerAction);
-
+                    //Update the winner
+                    compareActions(option.className, computerAction);
                     //update player and computer image
+                    playerHand.src = `./rps/${option.className}.png`;
                     computerHand.src = `./rps/${computerAction}.png`;
                 });
             });
     };
 
+    const updateScore = () =>
+    {
+        const playerScore = document.querySelector(".playerScore p");
+        const computerScore = document.querySelector(".computerScore p");
+        playerScore.textContent = pScore;
+        computerScore.textContent = aiScore;
+    };
+
     const compareActions = (playerAction, computerAction) =>
     {
-        const winner = document.querySelector('.winner');
+        const winner = document.querySelector(".winner");
 
         //Tie
         if(playerAction === computerAction)
         {
-            winner.textContent = 'You tied!';
+            winner.textContent = "You tied!";
             return;
         }
         //Rock
-        if(playerAction === 'rock')
+        if(playerAction === "rock")
         {
-            if(computerAction === 'paper')
+            if(computerAction === "paper")
             {
-                winner.textContent = 'Computer wins!';
+                winner.textContent = "You lose!";
+                aiScore++;
+                updateScore();
                 return;
             }else{
-                winner.textContent = 'You win!';
+                winner.textContent = "You win!";
+                pScore++;
+                updateScore();
                 return;
             }
         }
         //Paper
-        if(playerAction === 'paper')
+        if(playerAction === "paper")
         {
-            if(computerAction === 'scissors')
+            if(computerAction === "scissors")
             {
-                winner.textContent = 'Computer wins!';
+                winner.textContent = "You lose!";
+                aiScore++;
+                updateScore();
                 return;
             }else{
-                winner.textContent = 'You win!';
+                winner.textContent = "You win!";
+                pScore++;
+                updateScore();
                 return;
             }
         }
         //Scissors
-        if(playerAction === 'scissors')
+        if(playerAction === "scissors")
         {
-            if(computerAction === 'rock')
+            if(computerAction === "rock")
             {
-                winner.textContent = 'Computer wins!';
+                winner.textContent = "You lose!";
+                aiScore++;
+                updateScore();
                 return;
             }else{
-                winner.textContent = 'You win!';
+                winner.textContent = "You win!";
+                pScore++;
+                updateScore();
                 return;
             }
         }

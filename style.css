@@ -53,13 +53,6 @@ section
     background: rgb(230, 90, 90);
 }
 
-.hands
-{
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 .winner
 {
     color: rgb(230, 90, 90);
@@ -78,9 +71,18 @@ section
     align-items: center;
     justify-content: center;
 }
+.player-hand
+{
+    position: absolute;
+    top: 35%;
+    left: 40%;
+}
 
 .computer-hand
 {
+    position: absolute;
+    top: 1%;
+    left: 40%;
     transform: rotateX(180deg);
 }
 
